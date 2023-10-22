@@ -1,0 +1,46 @@
+/* 
+    COLOR PALETTE
+~ Space cadet:          #2B2D42
+~ Cool gray:            #8D99AE
+~ Anti-flash white:     #EDF2F4
+~ Red (Pantone):        #EF233C
+~ Fire engine red:      #D90429
+
+*/
+
+.body {
+    border: 1px solid purple;
+}
+
+.the-game {
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 200px;
+    width: 50%;
+    padding: 10px;
+}
+
+.a-to-m {
+    display: flex;
+    justify-content: center;
+}
+
+.n-to-z {
+    display: flex;
+    justify-content: center;
+}
+
+.atempts {
+    display: flex;
+    justify-content: center;
+}
+
+.show-letter{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
