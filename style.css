@@ -8,7 +8,7 @@
 
 */
 
-.body {
+body {
     border: 1px solid purple;
 }
 
@@ -18,6 +18,18 @@
     margin-top: 200px;
     width: 50%;
     padding: 10px;
+}
+
+.alfabets {
+    display: block;
+    
+}
+
+.alfabet-buttons {
+    background-color: red;
+    color: yellow;
+    display: flex;
+    justify-content: center;
 }
 
 .a-to-m {
@@ -30,6 +42,10 @@
     justify-content: center;
 }
 
+.characterPosition {
+    display: block
+}
+
 .atempts {
     display: flex;
     justify-content: center;
@@ -40,7 +56,8 @@
     justify-content: center;
 }
 
-.buttons {
+.action-buttons {
     display: flex;
     justify-content: center;
+    
 }

@@ -9,12 +9,44 @@
 <body>
     <div class="the-game">
         <div class="alfabets">
-        <h2 class="a-to-m">(A B C D E F G H I J K L M)</h2>
-        <h2 class="n-to-z">(N O P Q R S T U V W X Y Z)</h2>
+            
+                <div class="alfabet-buttons">
+                    <button class="A" id="a-button">A</button>
+                    <button class="B" id="b-button">B</button>
+                    <button class="C" id="c-button">C</button>
+                    <button class="D" id="d-button">D</button>
+                    <button class="E" id="e-button">E</button>
+                    <button class="F" id="f-button">F</button>
+                    <button class="G" id="g-button">G</button>
+                    <button class="H" id="h-button">H</button>
+                    <button class="I" id="i-button">I</button>
+                    <button class="J" id="j-button">J</button>
+                    <button class="K" id="k-button">K</button>
+                    <button class="L" id="l-button">L</button>
+                    <button class="M" id="m-button">M</button>
+                </div>
+            </div>
+                
+                <div class="alfabet-buttons">
+                    <button class="N" id="n-button">N</button>
+                    <button class="O" id="o-button">O</button>
+                    <button class="P" id="p-button">P</button>
+                    <button class="Q" id="q-button">Q</button>
+                    <button class="R" id="r-button">R</button>
+                    <button class="S" id="s-button">S</button>
+                    <button class="T" id="t-button">T</button>
+                    <button class="U" id="u-button">U</button>
+                    <button class="V" id="v-button">V</button>
+                    <button class="W" id="w-button">W</button>
+                    <button class="X" id="x-button">X</button>
+                    <button class="Y" id="y-button">Y</button>
+                    <button class="Z" id="z-button">Z</button>
+                </div>
+            </div>
         </div>
-        <p class="show-letter">_ _ _ _ _ _ _ _ _ _ _ _ </p>
+        <p class="show-letter" id="currentWord">_ _ _ _ _ _ _ _ _ _ _ _ </p>
 
-        <div class="buttons">
+        <div class="action-buttons">
             <button id="playButton">Play!</button>
             <button id="resetButton">RESET</button>
         </div>
@@ -22,5 +54,6 @@
         <p id="atempts" class="atempts"> ATEMPTS: [ ] </p>
     </div>
     <script src="hangman.js"></script>
+    <script src="getRandomWord.js"></script>
 </body>
 </html>
