@@ -11,30 +11,69 @@ Inget fulhack utan snygg strukturerad kod som skulle kunna "produktionssättas" 
 const alfabetButtons = document.querySelectorAll('.alfabet-buttons button');
 const playButton = document.getElementById('playButton');
 const resetButton = document.getElementById('resetButton');
+const outputWord = document.getElementById('currentWord');
+const viewAttempts = document.getElementById('attempts');
+
 
 //const alfabetWithOutString = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
 const alfabetWithString = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-import getRandomWord from './getRandomWord.js';
+import getRandomWord from "./getRandomWord.js";
 
-playButton.addEventListener('click', (e) => {
-   const randomWord = getRandomWord();
-   playButton.style.display="none";
-})
+let amountOfAttempts = 10;
 
-resetButton.addEventListener('click', (e) => {
-        playButton.style.display="block";
-})
+const updateAttempts = () => {
+  viewAttempts.textContent = amountOfAttempts;
+}
 
-alfabetButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        let pressedCharecter = this.innerText;
-        console.log('Pressed character: ' + pressedCharecter);
-    });
+const decreaseAmountValue = () => {
+  amountOfAttempts--;
+  updateAttempts();
+}
+
+const resetAmountValue = () => {
+  amountOfAttempts = 10;
+  updateAttempts();
+}
+
+playButton.addEventListener("click", (e) => {
+  getRandomWord();
+  updateAttempts();
+
+  playButton.style.display = "none";
+  outputWord.innerHTML.toUpperCase();
+});
+
+resetButton.addEventListener("click", (e) => {
+  resetAmountValue();
+
+  playButton.style.display = "block";
+  outputWord.innerHTML = "_ _ _ _ _ _ _ _ _ _ _ _ ";
+});
+
+alfabetButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    let pressedCharacter = this.innerHTML.toLowerCase();
+    console.log("Pressed character: " + pressedCharacter);
+
+    outputWord.innerHTML.toUpperCase();
+
+    if (outputWord.innerHTML.includes(pressedCharacter)) {
+      console.log(pressedCharacter, "Includes in", outputWord.innerHTML);
+        console.log("true");
+    } else {
+        console.log(pressedCharacter, " Does not includes in ", outputWord.innerHTML);
+        console.log("false");
+        decreaseAmountValue();
+    }
+  });
 });
 
 
-/* 
-for(let i in eachLetter) {
-    console.log(eachLetter[i]);
-} */
+
+const eachCharacter = () => {
+  let result = mockDataWord.split("");
+  result.forEach((char) => {
+    console.log(char);
+  });
+};
