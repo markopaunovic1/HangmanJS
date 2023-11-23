@@ -6,13 +6,11 @@ export const getRandomWord = () => {
     .then((response) => response.json())
     .then((data) => {
       const randomWord = data[0];
-      outputWord.innerHTML = randomWord;
+      const hiddenWord = " _ ".repeat(randomWord.length);
+      outputWord.innerHTML = hiddenWord;
       console.log(randomWord, "<- from getRandomWord");
     });
 };
-export default getRandomWord;
 
-/* resetButton.addEventListener('click', (e) => {
-    playButton.style.display="block";
-    outputWord.innerHTML = "";
-}) */
+
+export default getRandomWord;
