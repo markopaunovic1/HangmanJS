@@ -8,17 +8,72 @@ Gärna i en egen branch där en pull request är skapad
 
 Inget fulhack utan snygg strukturerad kod som skulle kunna "produktionssättas" */
 
-const testbutton = document.getElementById('a-to-m');
+const alfabetButtons = document.querySelectorAll('.alfabet-buttons button');
+const playButton = document.getElementById('playButton');
+const resetButton = document.getElementById('resetButton');
+const outputWord = document.getElementById('currentWord');
+const viewAttempts = document.getElementById('attempts');
 
-const Hangman = () => {
-    const charAToM = [A, B, C, D, E, F, G, H, I, J, K, L, M];
-    const charNToZ = ["N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-    
-    };
-    
+//const alfabetWithOutString = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
+const alfabetWithString = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-    testbutton.addEventListener('click', function(event) {
-        var pressedCharacter = String.fromCharCode(event.Hangman.charAToM);
-        console.log('You pressed character: ' + pressedCharacter);
-    })
+import getRandomWord from "./getRandomWord.js";
+
+let amountOfAttempts = 10;
+
+const updateAttempts = () => {
+  viewAttempts.textContent = amountOfAttempts;
+}
+
+const decreaseAmountValue = () => {
+  amountOfAttempts--;
+  updateAttempts();
+}
+
+const resetAmountValue = () => {
+  amountOfAttempts = 10;
+  updateAttempts();
+}
+
+playButton.addEventListener("click", (e) => {
+  getRandomWord();
+  updateAttempts();
+
+  playButton.style.display = "none";
+  outputWord.innerHTML.toUpperCase();
+});
+
+resetButton.addEventListener("click", (e) => {
+  resetAmountValue();
+
+  playButton.style.display = "block";
+  outputWord.innerHTML = "_ _ _ _ _ _ _ _ _ _ _ _ ";
+});
+
+alfabetButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    let pressedCharacter = this.innerHTML.toLowerCase();
+    console.log("Pressed character: " + pressedCharacter);
+
+    outputWord.innerHTML.toUpperCase();
+
+    if (outputWord.innerHTML.includes(pressedCharacter)) {
+      console.log(pressedCharacter, "Includes in", outputWord.innerHTML);
+        console.log("true");
+    } else {
+        console.log(pressedCharacter, " Does not includes in ", outputWord.innerHTML);
+        console.log("false");
+        decreaseAmountValue();
+    }
+  });
+});
+
+
+
+const eachCharacter = () => {
+  let result = mockDataWord.split("");
+  result.forEach((char) => {
+    console.log(char);
+  });
+};

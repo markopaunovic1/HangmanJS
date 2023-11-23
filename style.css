@@ -5,7 +5,6 @@
 ~ Anti-flash white:     #EDF2F4
 ~ Red (Pantone):        #EF233C
 ~ Fire engine red:      #D90429
-
 */
 
 body {
@@ -60,4 +59,9 @@ body {
     display: flex;
     justify-content: center;
     
+}
+
+.viewAttempts {
+    display: flex;
+    justify-content: center;
 }

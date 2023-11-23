@@ -10,7 +10,7 @@
     <div class="the-game">
         <div class="alfabets">
             
-                <div class="alfabet-buttons">
+                <div class="alfabet-buttons" id="alfabet-buttons">
                     <button class="A" id="a-button">A</button>
                     <button class="B" id="b-button">B</button>
                     <button class="C" id="c-button">C</button>
@@ -25,7 +25,6 @@
                     <button class="L" id="l-button">L</button>
                     <button class="M" id="m-button">M</button>
                 </div>
-            </div>
                 
                 <div class="alfabet-buttons">
                     <button class="N" id="n-button">N</button>
@@ -51,9 +50,12 @@
             <button id="resetButton">RESET</button>
         </div>
 
-        <p id="atempts" class="atempts"> ATEMPTS: [ ] </p>
+        <div class="viewAttempts">
+        <p id="attemptsPlaceHolder" class="atempts"> ATTEMPTS: </p>
+        <p id="attempts" class="atempts">  [ ] </p>
+        </div>
     </div>
-    <script src="hangman.js"></script>
-    <script src="getRandomWord.js"></script>
+    <script type="module" src="hangman.js"></script>
+    <script type="module" src="getRandomWord.js"></script>
 </body>
 </html>
